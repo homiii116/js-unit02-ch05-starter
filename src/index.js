@@ -20,7 +20,7 @@ class TranslationApp {
 
   showMessage() {
     /*
-      mainというidがセットされた要素の下にh1タグで現在のlocaleに応じて、メッセージを表示します。 
+      mainというidがセットされた要素の下にh1タグで現在のlocaleに応じて、メッセージを表示します。
     */
   }
 
@@ -34,3 +34,4 @@ class TranslationApp {
   const button2 = document.getElementById('button2');
   button2.addEventListener("click", app.updateLocale);
 }
+// 変更
