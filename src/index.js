@@ -2,7 +2,9 @@ import Polyglot from 'node-polyglot';
 
 class TranslationApp {
   constructor() {
-    this.polyglot = new Polyglot();
+    this.polyglot = new Polyglot({
+      phrases: {"hello": "こんにちは、世界"}
+    });
   }
 
   setup() {
@@ -34,4 +36,3 @@ class TranslationApp {
   const button2 = document.getElementById('button2');
   button2.addEventListener("click", app.updateLocale);
 }
-// 変更
