@@ -2,9 +2,7 @@ import Polyglot from 'node-polyglot';
 
 class TranslationApp {
   constructor() {
-    this.polyglot = new Polyglot({
-      phrases: {"hello": "こんにちは、世界"}
-    });
+    this.polyglot = new Polyglot();
   }
 
   setup() {
@@ -12,6 +10,12 @@ class TranslationApp {
       現在のLocaleに合わせて、polyglotにメッセージをセットします。
       メッセージのセットにはpolyglot.extend()を利用します。
     */
+    this.polyglot.extend({
+      "hello": "こんにちは、世界"
+    });
+
+    this.polyglot.t("hello");
+    => "こんにちは、世界"
   }
 
   updateLocale(e) {
