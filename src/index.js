@@ -13,11 +13,11 @@ class TranslationApp {
     */
     if (this.currentLocale === 'ja') {
       this.polyglot.extend({
-        "hello": "こんにちは、世界"
+        'hello': 'こんにちは、世界'
       });
     } else {
       this.polyglot.extend({
-        "hello": "Hello, World"
+        'hello': 'Hello, World'
       });
     }   
   }
@@ -33,9 +33,7 @@ class TranslationApp {
       mainというidがセットされた要素の下にh1タグで現在のlocaleに応じて、メッセージを表示します。
     */
     const mainEl = document.getElementById('main');
-    const h1 = document.createElement('h1');
-    h1.innerHTML = this.polyglot.t("hello");
-    mainEl.appendChild(h1); 　//　←上書きされてもよければ後で消す
+    mainEl.innerHTML = `<h1>${this.polyglot.t('hello')}<h1>`;
   }
 
 }
