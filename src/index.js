@@ -4,7 +4,7 @@ class TranslationApp {
   constructor() {
     this.polyglot = new Polyglot();
     this.currentLocale = localStorage.getItem('locale') || 'ja';
-    this.updateLocale = localStorage.setItem.bind('locale');
+    this.updateLocale = this.updateLocale.bind(this);
     console.log(this);
   }
 
@@ -29,8 +29,9 @@ class TranslationApp {
       ボタンにセットされたdata-localeを元に現在のlocaleを変更します。
     */
     e.preventDefault();
-    console.log(e.target.dataset.locale);
-
+    const changeLocale = e.target.dataset.locale;
+    this.updateLocale = localStorage.setItem(changeLocale);
+    this.currentLocale = this.updateLocale.setup();
   }
 
   showMessage() {
@@ -43,15 +44,14 @@ class TranslationApp {
 
 }
 
-const app = new TranslationApp();
-
 {
+  const app = new TranslationApp();
   const button1 = document.getElementById('button1');
   button1.addEventListener("click", app.updateLocale);
   
   const button2 = document.getElementById('button2');
   button2.addEventListener("click", app.updateLocale);
 
-  setup();
-  showMessage();
+  app.showMessage();
+  
 }
