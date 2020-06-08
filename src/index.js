@@ -5,7 +5,6 @@ class TranslationApp {
     this.polyglot = new Polyglot();
     this.currentLocale = localStorage.getItem('locale') || 'ja';
     this.updateLocale = this.updateLocale.bind(this);
-    console.log(this);
   }
 
   setup() {
